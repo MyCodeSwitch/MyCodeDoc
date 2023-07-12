@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reference>>Functions>>Set</h1>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">MDN LINK</a>
+    
+<script>
+//A JavaScript class is not an object. It is a template for JavaScript objects. 
+
+// The constructor method is a special method:
+
+// It has to have the exact name "constructor"
+// It is executed automatically when a new object is created
+// It is used to initialize object properties
+
+//
+//Example 1
+//
+
+class Plan{
+    constructor(year,city,title){
+        this.year = year;
+        this.city = city;
+        this.title = title;
+    };
+
+    consultantName(i){
+        return `${this.title} is consulted by ${i}`;
+    }
+
+    des(){
+        const date = new Date();
+        const year = date.getFullYear();
+        return `${this.year} log in: ${this.title} for ${this.city} | ${this.year}`;
+    }
+};
+
+const _2022MTP = new Plan(2022, "Morgantown", "MMMPO MTP");
+console.log(_2022MTP);
+console.log(_2022MTP.des());
+console.log(_2022MTP.consultantName("Haliyou"));
+
+//
+//Example 2
+//
+
+class greetings{
+    constructor(i){
+        this.person = i;
+    };
+    static hello(z){
+        return `Hi, ${z.person}`;
+    }
+}
+
+const instance1 = new greetings("Lily");
+console.log(instance1);
+console.log(greetings.hello(instance1));
+
+
+//
+//Example 3
+//
+
+
+//JavaScript static methods are useful for defining utility functions or operations that are related to a class but do not require an instance of the class to be called. 
+
+class MathTools{
+    static sum(nums){
+        return nums.reduce((acc,curr)=>acc + curr, 0);
+    }
+
+    static average (nums){
+        const sum = MathTools.sum(nums);
+        return sum/nums.length; 
+    }
+}
+
+const numbers = [23, 456, 33, 21, 30];
+
+console.log(MathTools.sum(numbers)); //563
+console.log(MathTools.average(numbers)); //112.6
+
+
+</script>
+</body>
+</html>
