@@ -86,6 +86,23 @@ const numbers = [23, 456, 33, 21, 30];
 console.log(MathTools.sum(numbers)); //563
 console.log(MathTools.average(numbers)); //112.6
 
+class Rectangle {
+  constructor(height, width) {
+    this.name = "Rectangle";
+    this.height = height;
+    this.width = width;
+  }
+}
+
+class FilledRectangle extends Rectangle {
+  constructor(height, width, color) {
+    super(height, width);
+    this.name = "Filled rectangle";
+    this.color = color;
+  }
+}
+
+
 
 </script>
 </body>
