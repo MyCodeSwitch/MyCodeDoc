@@ -1,1 +1,77 @@
-test set
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Reference>>Functions>>Set</h1>
+    <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/set">MDN LINK</a>
+    
+<script>
+// Setter methods are used to assign values to a property, and they are invoked using the assignment operator (=), not by calling them as functions.
+
+//
+//Example 1
+//
+
+const user = {
+    firstName:"",
+    lastName:"",
+
+    set fullName(name){
+        const [firstName_Input, lastName_Input] = name.split(" ");
+        this.firstName = firstName_Input;
+        this.lastName = lastName_Input.toUpperCase();
+    },
+
+    get fullName(){
+        return`${this.firstName} ${this.lastName}`;
+    }
+};
+
+user.fullName = "Jing Zhang";
+
+console.log(user.lastName); //ZHANG
+
+//Example 2
+const proj = {
+    statusLog: [],
+    set currentStatus(i){
+        this.statusLog.push(i);
+    },
+};
+
+proj.currentStatus = "planned";
+proj.currentStatus = "amended";
+proj.currentStatus = "committed";
+
+console.log(proj.statusLog);
+
+//Example 3
+
+class Greeting {
+    #msg = "Welcome!"
+    get msg(){
+        return this.#msg;
+    }
+
+    set msg(i){
+        this.#msg = `Welcome! ${i}`;
+    }
+}
+
+const instance = new Greeting();
+console.log(instance.msg); // Welcome!
+
+instance.msg = "Jing";
+console.log(instance.msg); // Welcome! Jing
+
+
+
+
+
+</script>
+</body>
+</html>
