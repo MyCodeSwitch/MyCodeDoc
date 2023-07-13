@@ -120,6 +120,101 @@ class stuff {
 const table = new stuff();
 console.log(table.name);
 
+//
+//Example 6
+//
+
+class Project {
+  projName = "";
+
+  constructor(i){
+    this.projName = i;
+  }
+
+  projDes(){
+    console.log(`Project Name:${this.projName}`);
+  }
+}
+
+const Mileground_Sidewalk = new Project("Mileground Sidewalk Improvements");
+
+Mileground_Sidewalk.projDes();
+
+//Example 7
+
+class Animal{
+  sleep(){
+    console.log("zzzzzz");
+  }
+}
+
+const cat = new Animal();
+cat.sleep();
+
+//Example 8
+
+class Person{
+  name;
+
+  constructor(name){
+    this.name = name;
+  }
+
+  introduceSelf(){
+    console.log(`Hi, I am ${this.name}`);
+  }
+}
+
+class Professor extends Person {
+  teaches; 
+
+  constructor(name, teaches){
+    super(name);
+    this.teaches = teaches;
+  }
+
+  introduceSelf(){
+    console.log(
+      `My name is ${this.name}, and I will be your ${this.teaches} professor.`
+    );
+  }
+
+  grade(paper){
+    const grade = Math.floor(Math.random()*(4)+1);
+    console.log(`Professor ${this.name} gave ${paper} in ${this.teaches} a score of ${grade}`);
+  }
+}
+
+const annie = new Professor("Annie", "Math");
+annie.introduceSelf();
+annie.grade("Papaer 1");
+
+class Student extends Person{
+  #year; 
+
+  constructor(name, year){
+    super(name);
+    this.#year = year;
+  }
+
+  introduceSelf(){
+    console.log(
+      `Hi! I'am ${this.name}, and I am in year ${this.#year}.`
+    );
+  }
+
+  canStudyArcher(){
+    if(this.#year > 1){
+      console.log(`${this.name} can study Archer`);
+    }else{
+      console.log(`${this.name} cann't study Archer`);
+    }
+  }
+}
+
+const lily = new Student("Lily", 2);
+lily.canStudyArcher();
+lily.introduceSelf();
 
 
 
